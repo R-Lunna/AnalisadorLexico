@@ -6,21 +6,38 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="gui.PleaseProvideControllerClassName">
+<AnchorPane prefHeight="570.0" prefWidth="1252.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.PleaseProvideControllerClassName">
    <children>
-      <Label layoutX="212.0" layoutY="14.0" prefHeight="47.0" prefWidth="176.0" text="Analisador Léxico">
+      <Label layoutX="538.0" layoutY="32.0" prefHeight="47.0" prefWidth="176.0" text="Analisador Léxico">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <TableView fx:id="table" layoutY="68.0" prefHeight="333.0" prefWidth="600.0">
+      <Label layoutX="212.0" layoutY="142.0" prefHeight="47.0" prefWidth="176.0" text="Análise Completa">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="844.0" layoutY="142.0" prefHeight="47.0" prefWidth="210.0" text="Tokens mal formados">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TableView fx:id="table" layoutY="235.0" prefHeight="333.0" prefWidth="600.0">
         <columns>
           <TableColumn fx:id="text" prefWidth="211.0" text="Token" />
           <TableColumn fx:id="type" prefWidth="191.0" text="Tipo" />
             <TableColumn fx:id="row" prefWidth="90.0" text="Linha" />
             <TableColumn fx:id="column" prefWidth="107.0" text="Coluna" />
         </columns>
+      </TableView>
+      <TableView fx:id="table2" layoutX="646.0" layoutY="235.0" prefHeight="333.0" prefWidth="606.0">
+         <columns>
+            <TableColumn fx:id="text2" prefWidth="211.0" text="Token" />
+            <TableColumn fx:id="type2" prefWidth="191.0" text="Tipo" />
+            <TableColumn fx:id="row2" prefWidth="99.0" text="Linha" />
+            <TableColumn fx:id="column2" prefWidth="104.0" text="Coluna" />
+         </columns>
       </TableView>
    </children>
 </AnchorPane>

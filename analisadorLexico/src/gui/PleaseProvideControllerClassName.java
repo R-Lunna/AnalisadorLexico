@@ -31,8 +31,29 @@ public class PleaseProvideControllerClassName implements Initializable {
 	    
 	    @FXML
 	    private TableColumn<Token, Integer> column;
+	    
+		@FXML
+		private TableView<Token> table2;
+		
+	    @FXML
+	    private TableColumn<Token, String> text2;
+	    
+	    @FXML
+	    private TableColumn<Token, TokenName> type2;
+	    
+	    @FXML
+	    private TableColumn<Token, Integer> row2;
+	    
+	    @FXML
+	    private TableColumn<Token, Integer> column2;
 
 	    ObservableList<Token> list;
+	    ObservableList<Token> list2;
+	    
+    	ScannerAL sc = new ScannerAL("code.al");
+    	Token token;
+    	ArrayList<Token> listToken = new ArrayList<Token>();
+	    ArrayList<Token> listIncorrectToken = new ArrayList<Token>();
 	    
 		@Override
 		public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -40,23 +61,36 @@ public class PleaseProvideControllerClassName implements Initializable {
 			type.setCellValueFactory(new PropertyValueFactory<Token, TokenName>("type"));
 			row.setCellValueFactory(new PropertyValueFactory<Token, Integer>("row"));
 			column.setCellValueFactory(new PropertyValueFactory<Token, Integer>("column"));
-		
 	    	list = FXCollections.observableArrayList(returnTable());
 	    	table.setItems(list);
+	    	
+			text2.setCellValueFactory(new PropertyValueFactory<Token, String>("text"));
+			type2.setCellValueFactory(new PropertyValueFactory<Token, TokenName>("type"));
+			row2.setCellValueFactory(new PropertyValueFactory<Token, Integer>("row"));
+			column2.setCellValueFactory(new PropertyValueFactory<Token, Integer>("column"));
+	    	list2 = FXCollections.observableArrayList(returnTable2());
+	    	table2.setItems(list2);
 		}
 		
 		public ArrayList<Token> returnTable() {
-	    	ScannerAL sc = new ScannerAL("code.al");
-	    	Token token;
-	    	ArrayList<Token> listToken = new ArrayList<Token>();
+
+	    	
 	    	
 	    	do {
 	    		token = sc.getToken();
 	    		
-	    		if (token != null) listToken.add(new Token(token.getType(), token.getText(), token.getRow(), token.getColumn()));
+	    		if (token != null) {
+	    			listToken.add(new Token(token.getType(), token.getText(), token.getRow(), token.getColumn()));
+	    			if (token.getType() == TokenName.TOKEN_MAL_FORMADO) listIncorrectToken.add(new Token(token.getType(), token.getText(), token.getRow(), token.getColumn()));
+	    		}
 	    	} while (token != null);
 	    	
 	    	
+	    	
 			return listToken;
+		}
+		
+		public ArrayList<Token> returnTable2() {
+			return listIncorrectToken;
 		}
 }
