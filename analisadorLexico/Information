@@ -1,0 +1,81 @@
+Qual a línguagem que o compilador irá compilar?
+	WL (William e Luna)
+
+Características da línguagem:
+A WL consiste em uma linguagem fracamente tipada, orientada a objetos
+	
+------------------------------- Palavras reservadas --------------------------
+function	-> Função
+main		-> Nome da Função principal
+const 		-> Variável constante
+var   		-> Variável global
+let   		-> Variável de escopo de função
+if    		-> Condicional
+else		-> Condicional se nenhuma das anteriores
+switch      -> Condicional de verificação única
+case		-> Verificador do switch
+break		-> Quebra do switch
+continue	-> Continuidade do switch
+while 		-> Laço de repetição
+for			-> Laço de repetição
+do			-> Parte do laço de repetição (Faça)
+true	 	-> Valor booleano true
+false		-> valor booleano false
+
+------------------------------- Expressões regulares --------------------------
+(a,z) -> Alfabeto minúsculo 
+(A,Z) -> Alfabeto maiúsculo 
+(0,9) -> Dígitos
+
+------------------------------- Operadores matemáticos ----------------------
+(+)   -> Soma
+(-)	  -> Subtração
+(*)	  -> Multiplicação
+(/)	  -> Divisão
+(%)	  -> Módulo
+
+------------------------------- Operadores de condicionais ----------------------
+(>)  -> Maior que 
+(<)  -> Menor que 
+(>=) -> Maior igual 
+(<=) -> Menor igual 
+(==) -> Igualdade 
+(!=) -> Diferença
+(!)  ->  Negação
+(||) -> OR condicional
+(&&) -> AND condicional
+(?)  -> Se - if
+(:)  -> Então - else
+------------------------------- Operadores bit a bit ----------------------
+(&)  -> AND bit a bit
+(|)  -> OR bit a bit
+(>>) -> Shift para a direita
+(<<) -> Shift para a esquerda
+(^)  -> XOR (OR exclusivo) bit a bit
+(~)  -> NOT bit a bit
+------------------------------- Operadores de atribuição ---------------------- 
+(=)  -> Atribui um valor
+(+=) -> Operador de adição e atribuição
+(-=) -> Operador de subtração e atribuição
+(*=) -> Operador de multiplicação e atribuição
+(/=) -> Operador de divisão e atribuição
+(%=) -> Operador de módulo e atribuição
+
+
+(++) -> Soma mais 1 ao valor já existente
+(--) -> Subtrai mais 1 ao valor já existente
+
+------------------------------- Identificador de final de linha --------------- 
+(;)  -> Final de linha
+
+-------------------------------- Outros símbolos --------------------------------------
+(	 -> Abertura de parênteses
+)	 -> Fechamento de parênteses
+{	 -> Abertura de blocos
+}	 -> Fechamento de blocos
+"    -> Abertura/fechamento de literais
+,    -> Operador vírgula
+[	 -> Abertura do indexador de array
+]    -> Fechamento do indexador de array
+.	 -> Operador ponto
+:	 -> Dois pontos (utilizados em expressões switch case)
