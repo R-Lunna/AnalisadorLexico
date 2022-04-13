@@ -77,47 +77,47 @@ public class ScannerAL {
 					
 					else if (verify.isChar(caracter)) { // Caracter
 						state = 1;
-						token.setColumn(column);
+						if (!invalideCaracter) token.setColumn(column);
 						mountWord(caracter);
 					} else if (verify.isNumber(caracter)) { // Numero
 						state = 3;
-						token.setColumn(column);
+						if (!invalideCaracter) token.setColumn(column);
 						mountWord(caracter);
 					} else if (verify.isOperatorEqual(caracter)) { // Igualdade
 						state = 5;
-						token.setColumn(column);
+						if (!invalideCaracter) token.setColumn(column);
 						mountWord(caracter);
 					} else if (verify.isOperatorComparisonLM(caracter)) { // Comparacao maior ou menor
 						state = 8;
-						token.setColumn(column);
+						if (!invalideCaracter) token.setColumn(column);
 						mountWord(caracter);
 					} else if (verify.isOperatorComparison(caracter)) { // Comparacao
 						state = 9;
-						token.setColumn(column);
+						if (!invalideCaracter) token.setColumn(column);
 						mountWord(caracter);
 					} else if (verify.isOperatorMost(caracter)) { // Soma
 						state = 10;
-						token.setColumn(column);
+						if (!invalideCaracter) token.setColumn(column);
 						mountWord(caracter);
 					} else if (verify.isOperatorMath(caracter)) { // Operadores matematicos
 						state = 13;
-						token.setColumn(column);
+						if (!invalideCaracter) token.setColumn(column);
 						mountWord(caracter);
 					} else if (verify.isSymbol(caracter)) { // Simbolos
 						state = 14;
-						token.setColumn(column);
+						if (!invalideCaracter) token.setColumn(column);
 						mountWord(caracter);
 					} else if (verify.isFinal(caracter)) { // Final de linha
 						state = 16;
-						token.setColumn(column);
+						if (!invalideCaracter) token.setColumn(column);
 						mountWord(caracter);
 					} else if (verify.isOperatorLess(caracter)) { // Subtracao
 						state = 17;
-						token.setColumn(column);
+						if (!invalideCaracter) token.setColumn(column);
 						mountWord(caracter);
 					} else if (verify.isDenial(caracter)) { // Negacao
 						state = 18;
-						token.setColumn(column);
+						if (!invalideCaracter) token.setColumn(column);
 						mountWord(caracter);
 					} else { // Caracter invalido
 						state = 0;
