@@ -21,30 +21,25 @@ public class PleaseProvideControllerClassName implements Initializable {
 		private TableView<Token> table;
 		
 	    @FXML
-	    private TableColumn<Table, String> text;
+	    private TableColumn<Token, String> text;
 	    
 	    @FXML
-	    private TableColumn<Table, TokenName> type;
+	    private TableColumn<Token, TokenName> type;
 	    
 	    @FXML
-	    private TableColumn<Table, Integer> row;
+	    private TableColumn<Token, Integer> row;
 	    
 	    @FXML
-	    private TableColumn<Table, Integer> column;
+	    private TableColumn<Token, Integer> column;
 
 	    ObservableList<Token> list;
 	    
-	    public void setView() {
-
-	    }
-
-	   
 		@Override
 		public void initialize(URL url, ResourceBundle resourceBundle) {
-			text.setCellValueFactory(new PropertyValueFactory<Table, String>("text"));
-			type.setCellValueFactory(new PropertyValueFactory<Table, TokenName>("type"));
-			row.setCellValueFactory(new PropertyValueFactory<Table, Integer>("row"));
-			column.setCellValueFactory(new PropertyValueFactory<Table, Integer>("column"));
+			text.setCellValueFactory(new PropertyValueFactory<Token, String>("text"));
+			type.setCellValueFactory(new PropertyValueFactory<Token, TokenName>("type"));
+			row.setCellValueFactory(new PropertyValueFactory<Token, Integer>("row"));
+			column.setCellValueFactory(new PropertyValueFactory<Token, Integer>("column"));
 		
 	    	list = FXCollections.observableArrayList(returnTable());
 	    	table.setItems(list);
@@ -55,13 +50,10 @@ public class PleaseProvideControllerClassName implements Initializable {
 	    	Token token;
 	    	ArrayList<Token> listToken = new ArrayList<Token>();
 	    	
-	    	
 	    	do {
 	    		token = sc.getToken();
 	    		
-	    		if (token != null) {
-	    			listToken.add(new Token(token.getType(), token.getText(), token.getRow(), token.getColumn()));
-	    		}
+	    		if (token != null) listToken.add(new Token(token.getType(), token.getText(), token.getRow(), token.getColumn()));
 	    	} while (token != null);
 	    	
 	    	
