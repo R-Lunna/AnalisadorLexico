@@ -119,6 +119,10 @@ public class ScannerAL {
 						state = 18;
 						if (!invalideCaracter) token.setColumn(column);
 						mountWord(caracter);
+					} else if (verify.isComment(caracter)) {
+						state = 22;
+						if (!invalideCaracter) token.setColumn(column);
+						mountWord(caracter);
 					} else { // Caracter invalido
 						state = 0;
 						token.setColumn(column);
@@ -329,6 +333,20 @@ public class ScannerAL {
 							setToken(TokenName.NEGACAO, aux, row); // Estado 19 do automato, retorna um token do tipo negacao
 							return token;
 						}
+					}
+				} case 22 : {
+					if (caracter == '\r' || caracter == '\n') {
+						back();
+						setToken(TokenName.COMENTARIO, aux, row);
+						return token;
+					
+					} else if (invalideCaracter) {
+						back();
+						setToken(TokenName.TOKEN_MAL_FORMADO, aux, row);
+						return token;	
+					} else {
+						state = 22;
+						mountWord(caracter);
 					}
 				}
 			}

@@ -9,3 +9,17 @@
 	}
 
 }
+
+function minhaFuncao() {
+	var y = 3;
+	
+	do {
+		y++;
+	} while (y < 10); 
+	
+	
+	for (var i = 5; i > 2; i--) {
+		
+	
+	}
+}

@@ -65,6 +65,11 @@ public class Verify {
 		return x == '!';
 	}
 	
+	// E comentario?
+	public boolean isComment(char x) {
+		return x == '#';
+	}
+	
 	// E uma palavra reservada?
 	// Neste caso e feito um tratamento somente para retornar falso ou verdadeiro
 	public boolean isReservedWord(String x) {
@@ -78,6 +83,6 @@ public class Verify {
 	
 	// E qualquer coisa fora do padrao?
 	public boolean notToken(char x) {
-		return x == '@' || x == '#' || x == '$' || x == '^'; 
+		return x == '@' || x == '$' || x == '^'; 
 	}
 } 
