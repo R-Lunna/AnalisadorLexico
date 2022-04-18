@@ -57,7 +57,17 @@ public class Verify {
 	
 	// E simbolo?
 	public boolean isSymbol(char x) {
-		return x == '(' || x == ')' || x == '{' || x == '}' || x == '"' || x == ',' || x == '[' || x == ']' || x == '.' || x == ':';
+		return x == '(' || x == ')' || x == '{' || x == '}' || x == ',' || x == '[' || x == ']' || x == '.' || x == ':';
+	}
+	
+	// E caracter?
+	public boolean isCaracter(char x) {
+		return x == '\'';
+	}
+	
+	// E Texto?
+	public boolean isText(char x) {
+		 return x == '"';
 	}
 	
 	// E negacao?

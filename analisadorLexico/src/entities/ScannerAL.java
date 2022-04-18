@@ -123,6 +123,14 @@ public class ScannerAL {
 						state = 22;
 						if (!invalideCaracter) token.setColumn(column);
 						mountWord(caracter);
+					} else if (verify.isCaracter(caracter)) {
+						state = 25;
+						if (!invalideCaracter) token.setColumn(column);
+						mountWord(caracter);
+					} else if (verify.isText(caracter)) {
+						state = 28;
+						if (!invalideCaracter) token.setColumn(column);
+						mountWord(caracter);
 					} else { // Caracter invalido
 						state = 0;
 						token.setColumn(column);
@@ -163,10 +171,13 @@ public class ScannerAL {
 						state = 3;
 						mountWord(caracter);
 						invalideCaracter = true;
-					} else { 
-						
+					} else {
 						if (invalideCaracter) {
 							back();
+							setToken(TokenName.TOKEN_MAL_FORMADO, aux, row);
+							return token;
+						} else if (verify.isChar(caracter)) {
+							mountWord(caracter);
 							setToken(TokenName.TOKEN_MAL_FORMADO, aux, row);
 							return token;
 						} else {
@@ -347,6 +358,31 @@ public class ScannerAL {
 					} else {
 						state = 22;
 						mountWord(caracter);
+						break;
+					}
+				} case 25 : {
+					state = 26;
+					mountWord(caracter);
+					break;
+				} case 26 : {
+					if (verify.isCaracter(caracter)) {
+						mountWord(caracter);
+						setToken(TokenName.CARACTER, aux, row);
+						return token;
+					} else {
+						mountWord(caracter);
+						setToken(TokenName.TOKEN_MAL_FORMADO, aux, row);
+						return token;
+					}
+				} case 28 : {
+					if (verify.isText(caracter)) {
+						mountWord(caracter);
+						setToken(TokenName.TEXTO, aux, row);
+						return token;
+					} else {
+						state = 28;
+						mountWord(caracter);
+						break;
 					}
 				}
 			}

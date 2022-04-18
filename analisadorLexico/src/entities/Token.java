@@ -63,9 +63,4 @@ public class Token {
 	public void setColumn(int column) {
 		this.column = column;
 	}
-	
-	@Override
-	public String toString() {
-		return "[Tipo -> " + type + "  ||  texto -> " + text + "  || Linha -> " + row + "||  Coluna -> " + column + "] \n";
-	}
 }
